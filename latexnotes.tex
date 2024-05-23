@@ -1,11 +1,25 @@
 %!tex program = lualatex
 \documentclass{ctexbook}
+\usepackage{hyperref}
+\usepackage{hologo}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage[outputdir=build]{minted}
+\ctexset{
+  section/format += {\flushleft\color{blue!60}\pingfang},
+  section/number = {\zhnum{chapter} \Roman{section}}
+}
 \author{dax}
 \date{2024年05月22日}
 \title{\LaTeX 学习笔记}
+
+\usepackage{silence}
+\WarningFilter{latexfont}{Font shape}
+\WarningFilter{latexfont}{Size substitution}
 \begin{document}
 \maketitle
 \include{prematter}
+\tableofcontents
 \part{基础篇}
 \include{introduction}
 

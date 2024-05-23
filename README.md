@@ -4,7 +4,8 @@
 
 ### 1. LaTeX 简介
    - 什么是 LaTeX？
-   - LaTeX 与 TeX 的关系
+   - LaTeX 的读法
+   - LaTeX 在发展历程
    - LaTeX 的应用领域
    - LaTeX 的优势与劣势
 
