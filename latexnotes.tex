@@ -8,8 +8,12 @@
 \usepackage[outputdir=build]{minted}
 \ctexset{
   section/format += {\flushleft\color{blue!60}\pingfang},
-  section/number = {\zhnum{chapter} \Roman{section}}
+  section/number = {\Roman{section}}
 }
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand\headrulewidth{0.4pt}
+\setlength{\headheight}{13.06885pt}
 \author{dax}
 \date{2024年05月22日}
 \title{\LaTeX 学习笔记}
