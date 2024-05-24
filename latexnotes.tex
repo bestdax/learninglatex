@@ -1,11 +1,16 @@
 %!tex program = lualatex
 \documentclass{ctexbook}
-\usepackage{hyperref}
+\usepackage[colorlinks=true]{hyperref}
 \usepackage{hologo}
 \usepackage{xcolor}
-\usepackage{tipauni}
+\usepackage{tipauni} % 音标
 \usepackage[most]{tcolorbox}
 \usepackage[outputdir=build]{minted}
+\usepackage{booktabs}
+\usepackage{csvsimple-l3}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{tikz}
 \ctexset{
   section/format += {\flushleft\color{blue!60}\pingfang},
   section/number = {\Roman{section}}
@@ -27,5 +32,6 @@
 \tableofcontents
 \part{基础篇}
 \include{chapter1}
+\include{chapter2}
 
 \end{document}

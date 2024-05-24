@@ -3,16 +3,16 @@
 目前整理了一份大概的提纲：
 
 ### 1. LaTeX 简介
-   - 什么是 LaTeX？
-   - LaTeX 的读法
-   - LaTeX 的发展历程
-   - LaTeX 的应用领域
-   - LaTeX 的优势与劣势
+   - 什么是LaTeX？
+   - LaTeX的读法
+   - LaTeX的发展历程
+   - LaTeX的应用领域
+   - LaTeX的优势与劣势
 
 ### 2. LaTeX 环境搭建
-   - 安装 LaTeX 发行版（如 TeX Live, MiKTeX, MacTeX）
-   - 文本编辑器的选择（如 TeXstudio, Overleaf, VSCode with LaTeX Workshop）
-   - 编译器和查看器的介绍（如 pdflatex, xelatex, dvips, evince, acrobat）
+   - 安装LaTeX发行版
+   - 编辑器
+   - PDF文件浏览器
 
 ### 3. LaTeX 基础
    - LaTeX 文档结构（.tex 文件）

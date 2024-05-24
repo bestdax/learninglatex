@@ -1,0 +1,22 @@
+编辑器,样式,系统,费用,内置浏览器,反查,自动补全
+AUCTeX,Source,MLW,Free,Yes,Yes,Yes
+Authorea,Source,O,Free,Yes,Yes,No
+CoCalc,Source,O,Free,Yes,Yes,Yes
+GNOME LaTeX,Source,L,Free,No,Yes,Yes
+Gummi,Source,L,Free,Yes ,Yes,No
+Kile,Source,MLW,Free,Yes ,Yes,Yes
+lyx,wysiwym,MLW,Free,Yes,Yes,Yes
+Notepad++,Source,W,Free,No,Yes,Partial
+Overleaf,Source,O,Free,Yes,Yes,Yes
+Scientific WorkPlace,WYSIWYM,W,Non-free,Yes,—,—
+TeXmacs,WYSIWYG,MLW,Free,Partial,—,—
+Texmaker,Source,MLW,Free,Yes,Yes,Yes
+TeXnicCenter,Source,W,Free,No,Yes,Yes
+TeXShop,Source,M,Free,Yes,Yes,Yes
+TeXstudio,Source,MLW,Free,Yes,Yes,Yes
+TeXworks,Source,MLW,Free,Yes,Yes,Yes
+Verbosus,Source,OAiOS,Free,Yes,No,Yes
+Vim,Source,MLW,Free,No,Yes,Yes
+Visual Studio Code,Source,MLW,Free,Yes ,Yes,Yes
+WinEdt,Source,W,Non-free,Yes,Yes,Yes
+WinShell,Source,W,Free,No,—,—
