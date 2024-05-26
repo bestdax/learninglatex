@@ -1,0 +1,148 @@
+\chapter{\LaTeX  简介}
+\section{\LaTeX 是什么}
+说到\LaTeX 我们就不得不从\TeX 说起。
+
+\TeX 是由高德纳教授\footnote{Donald E. Knuth,
+	斯坦福大学计算机教授，1992年退休}于1978年开发的排版系统，最初目的是为了排版他的著作《计算机程序设计艺术》。高教授发现当时存在的排版技术无法满足他对数学公式和高质量排版的需求，因此决定自己开发一个系统。纯血\TeX
+只包含最低层的原始命令(primitives)，为了增强易用性，高教授在纯\TeX 的基础上增加了一些宏集，开发出了所谓的plain \TeX
+。即便这样，
+plain \TeX 的学习门槛仍然相对较高。
+
+plain \TeX 以其卓越的排版质量和对数学公式处理的能力而闻名，但同时因其复杂的宏包和学习曲线而让一些用户望而却步。
+
+为了解决这个问题，Leslie Lamport在1980年代初期引入了\LaTeX ，这是一种基于\TeX 的宏包集合，它提供了一套更易于使用的高级宏命令，使得用户无需深入了解底层的\TeX 命令即可创建结构化和格式化的文档。\LaTeX 通过简化命令和提供文档类文件，极大地方便了学术论文、技术文档和书籍的排版工作。
+
+\LaTeX 的发展经历了多个版本，其中\LaTeXe 是目前最广泛使用的版本，由Frank Mittelbach领导的\LaTeX 3项目团队在1994年发布。\LaTeXe 不仅改进了排版功能，还引入了对复杂文档结构的更好支持，如部分文档、章节和参考文献管理。
+
+随着时间的推移，\LaTeX 社区不断发展壮大，出现了许多附加的宏包和工具，如\hologo{BibTeX}用于参考文献管理，以及各种用于数学公式、图形插入和定制排版的宏包。\LaTeX 的强大功能和灵活性使其成为学术界和出版界首选的排版工具之一。
+
+\LaTeX 的另一个重要特点是其跨平台的特性，几乎可以在所有操作系统上运行，包括Windows、macOS和Linux。此外，\LaTeX 的源文件是纯文本格式，这使得版本控制和文档共享变得非常方便。
+
+总而言之，\LaTeX 是一个功能强大、高度可定制的排版系统，它从最初的\TeX 发展而来，已经成为科技文档和学术出版物中不可或缺的工具。
+
+\section{\LaTeX 的读法}
+\LaTeX 是由两部分组成的，后面的\TeX 是由高德纳命名的，读音同technology里面的tech。前面的La是由其创造者Leslie
+Lamport的姓而来。一般读作[\textquotesingle le\textsci t\textepsilon k]，[\textquotesingle la:t\textepsilon
+k]。高德纳对\TeX 的读法比较坚持，而Lamport博士则无所谓。不管如何，我们应该尊重缔造者对他的作品的命名。
+
+\section{\LaTeX 的发展历程}
+\begin{itemize}
+	\item 1980年代初期Leslie Lamport为了自己写书的需要开发出了\LaTeX。
+	\item 1985年8月2.09版发布，这是Leslie Lamport自己的最后一版\LaTeX。
+	\item 1989年8月21日在斯坦福举行的Tex User Group会议上，Leslie Lamport将\LaTeX 项目移交给Frank Mittelbach管理。
+	\item 1994年6月1日发布\LaTeXe，一直沿用至今。
+	\item 同时在开发的\LaTeX
+	      3一直延期，根据一份该小组2020年公布的消息\footnote{https://www.latex-project.org/publications/2020-FMi-TUB-tb128mitt-quovadis.pdf}，将不会发布\LaTeX
+	      3，而是将\LaTeX 3中的功能移植到\LaTeXe 中来。
+\end{itemize}
+
+将来的\LaTeX
+会变成什么样我不知道，但是应该会变得更好吧。我是希望所有的宏包都有一套统一的规则来规范写法，这样的话使用起来的难度会小很多。
+
+\section{pdfLaTeX}
+\hologo{pdfLaTeX} 是一个强大的\LaTeX 编译器，它是对传统的\TeX 排版系统的现代化扩展。\hologo{pdfLaTeX} 由 Hàn Thế Thành 在20世纪90年代开发，旨在直接生成PDF文件，利用PDF格式带来的诸多优势，如超链接、元数据支持和多种现代图像格式的集成。
+与传统的\LaTeX 编译器相比，\hologo{pdfLaTeX}
+能够直接输出PDF文档，省去了将DVI文件转换为PostScript或PDF的步骤。这不仅提高了工作效率，还使得最终文档的分享和分发变得更加便捷。\hologo{pdfLaTeX} 支持包括PNG、JPEG和PDF本身在内的多种图像格式，这为用户提供了更大的灵活性和控制力，尤其是在处理复杂的科学和工程文档时。
+
+\hologo{pdfLaTeX} 保留了\LaTeX
+的所有优点，如对数学公式和复杂排版的卓越处理能力，同时通过直接生成PDF，它简化了工作流程并提高了输出质量。此外，\hologo{pdfLaTeX} 与\LaTeX 社区开发的数千个宏包和文档类兼容，使得用户可以轻松创建从学术论文到技术报告的各种文档。
+
+\section{XeLaTeX和LuaLaTeX}
+\hologo{pdfLaTeX}对非拉丁字符集的支持不够友好，因此催生出了\hologo{XeLaTeX}和\hologo{pdfLaTeX}。
+
+\hologo{XeLaTeX}是一个基于XeTeX引擎的LaTeX编译器，由Jonathan Kew开发，旨在提供对现代排版需求的全面支持。它特别适合处理包含复杂脚本和非拉丁字符集的语言，比如中文、阿拉伯语、俄语等。
+
+\hologo{XeLaTeX}的核心优势在于其对Unicode的原生支持，这意味着用户可以无缝地输入和排版国际字符，无需进行特殊的编码转换。此外，\hologo{XeLaTeX}还支持系统字体，用户可以直接在LaTeX文档中使用自己系统中安装的任意字体，这为文档的排版提供了更大的灵活性和控制力。
+
+与pdfLaTeX相比，\hologo{XeLaTeX}不仅支持PDF输出，还能够处理更广泛的图像格式，包括PNG、JPEG、PDF等，这使得\hologo{XeLaTeX}成为生成含有复杂图形和图表文档的理想选择。
+
+\hologo{LuaLaTeX}与\hologo{XeLaTeX}一样支持Unicode，并且更进一步引入了Lua脚本的支持，这使得用户和开发者能够在\hologo{LaTeX}文档中执行更高级的编程任务。Lua语言的集成为自动化排版过程、自定义宏以及与外部程序交互提供了可能，极大地扩展了\hologo{LaTeX}的功能性。
+
+\section{ConTeXt}
+\hologo{ConTeXt}是一个由Hans Hagen在1990年代初开发的文档排版系统，它基于\hologo{TeX}引擎，但提供了与\hologo{LaTeX}不同的排版方法和哲学。\hologo{ConTeXt}设计之初旨在提供一个更为直观和灵活的方式来创建复杂和高级的排版效果，它特别适合于那些需要精细控制页面布局和设计的用户。
+
+\hologo{ConTeXt}的一个显著特点是它的“标记到类型”（Mark to
+Type）的排版方式，这种方式允许用户定义自己的排版规则和元素，从而实现高度定制化的文档结构。这与传统的\hologo{LaTeX}
+相比，后者通常采用“类型到标记”（Type to Mark）的方式，即用户通过特定的命令和环境来生成格式化的输出。
+
+\hologo{ConTeXt}也提供了一套丰富的界面，使用户能够轻松实现复杂的排版效果，如多栏布局、图表、框和颜色等。它还支持国际化，可以很好地处理多种语言和脚本，包括中文、阿拉伯语和印度语等。
+
+\hologo{ConTeXt}系统包括多种模块和组件，如MKIV模块，它提供了对现代排版技术的支持，例如PDF元数据、透明度和混合模式等。此外，\hologo{ConTeXt}也支持Lua脚本语言，这为自动化排版任务和自定义功能提供了强大的编程能力。
+
+\hologo{ConTeXt}不断发展和更新，拥有一个活跃的社区，提供了大量的文档和教程，帮助用户学习如何使用这个系统。尽管\hologo{ConTeXt}的学习曲线可能比\hologo{LaTeX}陡峭，但它为那些寻求更高自由度和控制力的排版专业人士和爱好者提供了一个强大的工具。
+
+\section{理解编译器与引擎}
+在\hologo{LaTeX}的世界中，编译器和引擎是两个核心概念，它们在文档排版流程中扮演不同的角色：
+
+\subsection*{\hologo{TeX} 引擎}
+\hologo{TeX} 引擎是一种底层的程序，负责解释和执行\hologo{TeX}源代码中的命令，从而生成格式化的文档。它处理文本的排版、数学公式的布局、图形的插入等。\hologo{TeX} 引擎是高度灵活和强大的，但同时也比较低层，需要用户有较强的技术知识。
+
+\subsection*{常见的\hologo{TeX}引擎包括：}
+\begin{itemize}
+	\item \hologo{eTeX}：由 Peter Breitenlohner 在1998年开发，是原始\TeX 引擎的增强版本。
+	\item \hologo{pdfTeX}：由Hàn Thế Thành开发，支持直接生成PDF文件。
+	\item \hologo{XeTeX}：由Jonathan Kew开发，支持Unicode和现代字体技术。
+	\item \hologo{LuaTeX}：集成了Lua脚本语言，增强了\hologo{TeX}的编程能力。
+\end{itemize}
+
+\subsection*{\hologo{LaTeX} 编译器}
+\hologo{LaTeX} 编译器实际上是一个封装（wrapper），它在调用\hologo{TeX}引擎之前对\hologo{LaTeX}文档进行预处理。\hologo{LaTeX} 是一种基于\hologo{TeX}的宏包集合，提供了一套高级的宏和环境，使得文档的编写更加容易和标准化。
+
+\subsection*{\hologo{LaTeX} 编译器的主要作用包括：}
+\begin{enumerate}
+	\item 加载\hologo{LaTeX}宏包和文档类。
+	\item 解析\hologo{LaTeX}命令和结构，将其转换为\hologo{TeX}引擎能理解的命令。
+	\item 调用\hologo{TeX}引擎来执行排版任务。
+	\item 处理文档中的交叉引用、目录生成等高级功能。
+\end{enumerate}
+
+\subsection*{常见的\hologo{LaTeX}编译器包括：}
+
+\begin{itemize}
+	\item latex：传统的\hologo{LaTeX}编译器，通常生成DVI格式的文件。
+	\item pdflatex：\hologo{pdfTeX} 引擎的\hologo{LaTeX}编译器，直接生成PDF文件。
+	\item xelatex：\hologo{XeTeX} 引擎的\hologo{LaTeX}编译器，也直接生成PDF文件，支持更广泛的字符和字体。
+	\item lualatex：\hologo{LuaTeX} 引擎的\hologo{LaTeX}编译器，同样支持直接生成 PDF。
+\end{itemize}
+
+\subsection*{区别}
+\begin{itemize}
+	\item 角色：\hologo{TeX}引擎负责实际的排版工作，而\hologo{LaTeX}编译器则处理文档的预处理和调用\hologo{TeX}引擎。
+	\item 抽象层次：\hologo{LaTeX} 编译器提供了一个更高层次的抽象，使得用户不必直接编写\hologo{TeX}命令，而是使用更易于理解和使用的\hologo{LaTeX}命令。
+	\item 兼容性：\hologo{LaTeX}编译器生成的命令需要\hologo{TeX}引擎来解释和执行，不同的引擎可能对\hologo{LaTeX}命令的解释略有不同，这可能导致在不同引擎中输出的结果有细微差别。
+\end{itemize}
+
+\section{\LaTeX 的使用领域}
+\LaTeX 是一种高度专业的文档排版软件，广泛应用于学术界、技术出版、以及任何需要高质量排版的场合。它特别适合生成包含复杂数学公式、图形、表格和参考文献的文档。在数学、物理学、计算机科学、工程学等领域，\LaTeX 几乎是撰写科研论文、技术报告和书籍的标准工具。
+
+\LaTeX 的强大之处在于其能够精确地控制文档的每一个细节，从字体选择到页面布局，再到复杂的数学和科学符号。它支持多语言排版，包括但不限于英语、中文、德语等，使其成为国际学术交流中不可或缺的工具。
+
+除了学术出版，\LaTeX 也常用于创建简历、幻灯片、书籍和手册。其高度可定制的模板和样式文件，使得用户可以轻松创建具有专业外观的文档。\LaTeX 的另一个优势是它的跨平台性，可以在多种操作系统上运行，包括Windows、macOS和Linux。
+
+\LaTeX 的社区非常活跃，提供了大量的宏包和文档类，这些资源极大地扩展了\LaTeX 的功能，使得用户可以轻松应对各种特殊的排版需求。无论是撰写博士论文、编辑教科书、还是制作精美的艺术品目录，\LaTeX 都能够提供强大的支持。
+
+\section{\LaTeX 的优势和劣势}
+\subsection*{优势}
+\begin{description}
+	\item [精确的排版控制：]\LaTeX 提供了对文档排版的精确控制，包括字体大小、间距、对齐方式等，这使得它在生成高质量的文档方面表现出色，特别是在学术和技术出版领域。
+	\item [数学公式和科学符号：]\LaTeX 在处理复杂的数学公式和科学符号方面非常强大，它提供了一套丰富的命令和环境来轻松排版这些内容。
+	\item [跨平台兼容性：]\LaTeX 可以在多种操作系统上运行，包括Windows、macOS和Linux，这使得用户可以在不同的平台上创建和编辑文档。
+	\item [模板和宏包：]\LaTeX 拥有大量的模板和宏包，这些资源可以帮助用户快速开始文档的编写，并扩展\LaTeX 的功能。
+	\item [社区支持：]\LaTeX 拥有一个庞大的用户社区，提供大量的教程、指南和论坛支持，使得用户在遇到问题时能够快速找到解决方案。
+	\item [文档结构：]\LaTeX 强调文档的结构化编写，这有助于维护大型文档，并使得文档的修改和管理变得更加容易。
+	\item [纯文本格式：]容易进行版本控制。
+	\item [免费：]虽然也有\LaTeX 的商用软件，但是大部分都是免费的。
+\end{description}
+
+\subsection*{劣势}
+\begin{description}
+	\item [学习曲线：]\LaTeX 拥有一个陡峭的学习曲线，特别是对于那些不熟悉编程和命令行操作的用户来说，开始使用\LaTeX 可能需要一些时间和努力。
+	\item [所见非所得（WYSIWYG）：]与一些所见即所得（WYSIWYG）的文档编辑器不同，\LaTeX 需要用户编写代码来创建文档，这可能会使得初学者感到困惑。
+	\item [日常文档编辑：]对于简单的日常文档编辑任务，如撰写信件或备忘录，\LaTeX 可能过于复杂和繁琐。
+	\item [图形和布局限制：]虽然\LaTeX 在排版数学公式和文本方面表现出色，但在处理复杂的图形和布局时可能不如一些专业的图形设计软件灵活。
+	\item [兼容性问题：]由于\LaTeX 的复杂性，不同版本的\LaTeX 或不同的宏包之间可能会存在兼容性问题。
+	\item [文件共享：]\LaTeX 文档通常需要特定的编译器来查看最终效果，这可能会使得文件共享变得复杂，特别是对于那些不熟悉\LaTeX 的用户。
+	\item [宏包繁杂：]\LaTeX 社区提供了数量庞大的宏包库，但是宏包作者的水准参差不齐，风格不够统一。
+\end{description}
+
+\LaTeX 是一种强大的文档排版工具，尤其适合于需要精确控制排版和复杂数学公式的学术和技术文档。然而，它的学习曲线和使用方式可能会使得一些用户望而却步，特别是对于那些只需要进行简单文档编辑的用户。
