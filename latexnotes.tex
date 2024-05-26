@@ -4,21 +4,35 @@
 \usepackage{hologo}
 \usepackage{xcolor}
 \usepackage{tipauni} % 音标
-\usepackage[most]{tcolorbox}
 \usepackage[outputdir=build]{minted}
+\usepackage[all]{tcolorbox}
 \usepackage{booktabs}
 \usepackage{csvsimple-l3}
 \usepackage{longtable}
 \usepackage{rotating}
 \usepackage{tikz}
 \ctexset{
-  section/format += {\flushleft\color{blue!60}\pingfang},
+  section/format += {\flushleft\color{green!50!blue}\pingfang},
   section/number = {\Roman{section}}
 }
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand\headrulewidth{0.4pt}
 \setlength{\headheight}{13.06885pt}
+
+
+% tcolorbox settings
+\NewTCBListing[auto counter]{texlst}{ O{} }{
+  listing engine=minted,
+  minted language=latex,
+  sidebyside,
+  minted options app={linenos, numbersep=5pt},
+  lower separated=false,
+  colframe=green!50!blue,
+  righthand width=3cm,
+  title={\pingfang 代码示例\thetcbcounter},
+  \IfNoValueTF{#1}{}{#1}
+}
 \author{dax}
 \date{2024年05月22日}
 \title{\LaTeX 学习笔记}
@@ -26,12 +40,15 @@
 \usepackage{silence}
 \WarningFilter{latexfont}{Font shape}
 \WarningFilter{latexfont}{Size substitution}
+\WarningFilter{latexfont}{Some font}
 \begin{document}
 \maketitle
 \include{prematter}
 \tableofcontents
 \part{基础篇}
-\include{chapter2}
-\include{chapter1}
+\include{chapter01}
+\include{chapter02}
+% \include{chapter03}
+\include{chapter_history}
 
 \end{document}
