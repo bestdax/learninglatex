@@ -1,26 +1,44 @@
 %!tex program = lualatex
 \documentclass{ctexbook}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% silent warnings
+\usepackage{silence}
+\WarningFilter{latexfont}{Font shape}
+\WarningFilter{latexfont}{Size substitution}
+\WarningFilter{latexfont}{Some font}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[colorlinks=true]{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ctexset{
+  section/format += {\flushleft\color{green!50!blue}\pingfang},
+  section/number = {\Roman{section}}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand\headrulewidth{0.4pt}
+\setlength{\headheight}{13.06885pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% minted settings 
+\usepackage[outputdir=build]{minted}
+\newmintinline[texinline]{latex}{breaklines, breakbefore=\space}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{hologo}
 \usepackage{xcolor}
 \usepackage{tipauni} % 音标
-\usepackage[outputdir=build]{minted}
 \usepackage[all]{tcolorbox}
 \usepackage{booktabs}
 \usepackage{csvsimple-l3}
 \usepackage{longtable}
 \usepackage{rotating}
 \usepackage{tikz}
-\ctexset{
-  section/format += {\flushleft\color{green!50!blue}\pingfang},
-  section/number = {\Roman{section}}
-}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\renewcommand\headrulewidth{0.4pt}
-\setlength{\headheight}{13.06885pt}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % tcolorbox settings
 \NewTCBListing[auto counter]{texlst}{!o}{
   listing engine=minted,
@@ -31,16 +49,27 @@
   colframe=green!50!blue,
   righthand width=3cm,
   title={\pingfang 代码示例\thetcbcounter},
+  label={code\thetcbcounter},
+  before=\begin{figure}[ht],
+  after=\end{figure},
   \IfNoValueTF{#1}{}{#1}
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% title setting
 \author{dax}
 \date{2024年05月22日}
 \title{\LaTeX 学习笔记}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{silence}
-\WarningFilter{latexfont}{Font shape}
-\WarningFilter{latexfont}{Size substitution}
-\WarningFilter{latexfont}{Some font}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
 \include{prematter}
