@@ -1,12 +1,55 @@
 \chapter{\LaTeX 入门}
+
 \section{hello world}
-按惯例，我们首先在文本编辑器中写一个hello world，让\LaTeX
-先用起来。如果是完全新手的话，建议首先使用发行版自带的编辑器，或者是overleaf的在线编辑器，因为对运行环境的集成度高，所以容易上手。
+按惯例，我们首先在文本编辑器中写一个hello world，让\LaTeX 先用起来。如果是完全新手的话，建议首先使用发行版自带的编辑器，或者是overleaf的在线编辑器，因为对运行环境的集成度高，所以容易上手。
 
 \begin{texlst}[listing only]
-%!tex program = lualatex
 \documentclass{article}
 \begin{document}
 hello world
 \end{document}
 \end{texlst}
+将上面的代码输入到编辑器中，然后编译(在发行版的编辑器会有编译的按钮)，完成之后就会看到生成的PDF文件中显示的“hello
+world”。
+
+下面是对于这段代码的说明：
+\begin{enumerate}
+	\forcsvlist{\item}{
+	      第一个语句\texinline{\documentclass{article}}是指定文档类型，这里指定的是article类型,
+	      \texinline{\begin{document}}和\texinline{\end{document}}之间是正文区,
+	      文档类型与正文之间称为导言区，这里可以加载其他宏包或者进行一些设定，这个示例里面这些都没有，我们会在后面看到
+	      }
+\end{enumerate}
+
+\section{文档类型}
+文档类型是\LaTeX 基于\TeX
+引擎做的一层抽象，使得文档内容与格式能够分离，这样我们写文档的时候可以更加专注于内容。但是实际上除非是有一个完全合乎规范的文档模板，写作者本身还是需要具备一定的\LaTeX
+知识才能顺利地写作的。
+
+\LaTeX 内置了数种文档类型，其中常用的：article、report和book。各个文档类型的适用范围如下表：
+\noindent
+\begin{table}[ht]
+	\begin{tabular}{lll} \toprule
+		文档类型    & 说明   & 支持的章节标号                                           \\ \midrule
+		book    & 长篇书籍 & part, chapter, section, subsection, subsubsection \\
+		report  & 中篇报告 & chapter, section, subsection, subsubsection       \\
+		article & 短篇文章 & section, subsection, subsubsection                \\
+		\bottomrule
+	\end{tabular}
+	\caption{\LaTeX 内置常用文档类型}
+\end{table}
+
+回到``hello world''的示例，如果把“hello
+world”改成“你好，世界”，你将看不到相应的输出。这是因为article文档类型默认的字体并不支持中文，我们可以通过设置正确的字体，或者选择一个支持中文的文档类型。这里我们简单介绍一下ctex宏包，它提供了四种文档类型：ctexart、ctexrep、ctexbook及ctexbeamer，前面三个是基于\LaTeX
+的基础文档类型做的汉化版本，ctexbeamer是用来制作幻灯片的。
+
+\AmS (美国数学学会)也提供了一套文档类型，分别为amsart和 amsbook，对数学公式的排版提供了更多的支持。当然还有很多很多的文档类型，可以根据自身的需要去使用。
+
+\section{\LaTeX 的三种语句}
+\LaTeX 的语句分三种，命令、文本和注释。如``hello word''示例中的
+\texinline{\documentclass{article}}就是一条命令语句，以反斜杠\textbackslash 开始，
+document-class为命令名，只能用英文字母。这个规定涉及到\TeX 中的字符分类码(code
+category)，但是分类码也是可以修改的，这个以后再讲。documentclass后面的花括号内是命令的参数。命令一般还会有选项，比如：
+\\	\texinline{\documentclass[a4paper]{article}}，用来设置纸张大小为A4，至于其他的选项后面再介绍。
+
+``hello world''示例中的'
