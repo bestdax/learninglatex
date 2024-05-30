@@ -73,6 +73,14 @@ after=\end{figure},
 #1}
 
 
+% TODO make a new cmd can receive multiline commands
+\newcommand{\shellcmd}[1]{%
+  \begin{tcolorbox}[title=CMD]%
+    \mintinline{shell}{#1}
+  \end{tcolorbox}
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % title setting
 \author{dax}
