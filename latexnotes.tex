@@ -40,22 +40,35 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % tcolorbox settings
-\NewTCBListing[auto counter]{texlst}{!o}{
-  listing engine=minted,
-  minted language=latex,
-  sidebyside,
-  minted options app={linenos, numbersep=5pt},
-  lower separated=false,
-  colframe=green!50!blue,
-  righthand width=3cm,
-  title={\pingfang 代码示例\thetcbcounter},
-  label={code\thetcbcounter},
-  before=\begin{figure}[ht],
-  after=\end{figure},
-  \IfNoValueTF{#1}{}{#1}
-}
+% \NewTCBListing[auto counter]{texlst}{!oo}{
+%   listing engine=minted,
+%   minted language=latex,
+%   sidebyside,
+%   minted options app={linenos, numbersep=5pt},
+%   lower separated=false,
+%   colframe=green!50!blue,
+%   righthand width=3cm,
+%   title={\pingfang 代码示例\thetcbcounter},
+%   label={code\thetcbcounter},
+%   before=\begin{figure}[ht],
+%   after=\end{figure},
+%   \IfNoValueTF{#1}{}{#1},
+%   \IfNoValueTF{#2}{}{#2},
+% }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newtcblisting[auto counter,number within=section]{texlst}[1][]{%
+listing engine=minted,
+minted language=latex,
+sidebyside,
+minted options app={linenos, numbersep=5pt},
+lower separated=false,
+colframe=green!50!blue,
+righthand width=3cm,
+title={\pingfang 代码示例\thetcbcounter},
+before=\begin{figure}[ht],
+after=\end{figure},
+#1}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
