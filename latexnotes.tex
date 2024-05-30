@@ -20,7 +20,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\renewcommand\headrulewidth{0.4pt}
+% \renewcommand\headrulewidth{0.4pt}
 \setlength{\headheight}{13.06885pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % minted settings 
@@ -42,23 +42,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % tcolorbox settings
-% \NewTCBListing[auto counter]{texlst}{!oo}{
-%   listing engine=minted,
-%   minted language=latex,
-%   sidebyside,
-%   minted options app={linenos, numbersep=5pt},
-%   lower separated=false,
-%   colframe=green!50!blue,
-%   righthand width=3cm,
-%   title={\pingfang 代码示例\thetcbcounter},
-%   label={code\thetcbcounter},
-%   before=\begin{figure}[ht],
-%   after=\end{figure},
-%   \IfNoValueTF{#1}{}{#1},
-%   \IfNoValueTF{#2}{}{#2},
-% }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \newtcblisting[auto counter,number within=section]{texlst}[1][]{%
 listing engine=minted,
 minted language=latex,
@@ -72,13 +55,15 @@ before=\begin{figure}[ht],
 after=\end{figure},
 #1}
 
-
-% TODO make a new cmd can receive multiline commands
-\newcommand{\shellcmd}[1]{%
-  \begin{tcolorbox}[title=CMD, colframe=green!50!blue]%
-    \mintinline{shell}{#1}
-  \end{tcolorbox}
-}
+\newtcblisting[auto counter,number within=section]{shellcmd}[1][]{%
+listing only,
+listing engine=minted,
+minted language=shell,
+colframe=green!50!blue,
+title={CMD \thetcbcounter},
+before=\begin{figure}[ht],
+after=\end{figure},
+#1}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
