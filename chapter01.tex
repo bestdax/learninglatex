@@ -5,7 +5,7 @@
 \begin{table}[htpb]
 	\centering
 	\begin{tabular}{ lll } \toprule
-		系统         & 发行版      \\          \midrule
+		系统       & 发行版   \\          \midrule
 		Windows    & MikTeX   \\
 		Unix/Linux & Tex Live \\
 		macOS      & MacTeX   \\\bottomrule
@@ -15,11 +15,9 @@
 
 发行版的安装可以直接搜索对应的官网下载，然后安装即可。如果需要详细的指导，可以搜索``\href{https://mirrors.concertpass.com/tex-archive/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf}{一份简短的关于 LATEX
 	安装的介绍}\footnote{https://mirrors.concertpass.com/tex-archive/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf}''。这份文档也包含在发行版中，如果你已经安装了发行版，可以在命令行中输入以下内容来找到此文档：
-\begin{tcolorbox}[title=CMD]
-	\begin{minted}{sh}
-texdoc install-latex-guide-zh-cn
-\end{minted}
-\end{tcolorbox}
+\begin{shellcmd}
+	texdoc install-latex-guide-zh-cn
+\end{shellcmd}
 
 \section{编辑器}
 \LaTeX 文件是纯文本格式，所以理论上讲任何文本编译器都能用来写\LaTeX 代码。实际操作中，快速的写出漂亮优雅的\LaTeX
@@ -47,4 +45,3 @@ Code + LaTeX Workshop。Vim + vimtex也是一个不错的方案，不过上手�
 是一个广泛使用的 PDF 阅读器，它提供了丰富的功能和良好的兼容性。然而，还有许多其他优秀的PDF阅读器，如 Foxit
 Reader、Sumatra PDF、PDF-XChange Viewer和
 Okular，它们各有特点，也是很好的选择。如果你喜欢极客一点的，可以试试zathura和我的的最爱sioyek。
-
