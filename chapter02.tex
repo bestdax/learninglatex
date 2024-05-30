@@ -67,15 +67,16 @@ category)，但是分类码也是可以修改的，这个以后再讲。document
 	\centering
 	\begin{tabular}{lll} \toprule
 		符号           & 作用                           & 输出方式                   \\ \midrule
-		\#             & 宏参数定义                     & \texinline{\#}             \\
-		\$             & 用于数学环境                   & \texinline{\$}             \\
-		\^{}           & 用于数学环境中表示上标         & \texinline{\^{}}           \\
-		\_             & 用于数学环境中表示下标         & \texinline{\_}             \\
-		\&             & 用于一些环境中表示对齐         & \texinline{\&}             \\
-		\{ \}          & 成对出现，表示范围，或者作用域 & \texinline{\{ \}}          \\
-		\~{}           & 表示此处不能断开               & \texinline{\~{}}           \\
-		\textbackslash & 开始一个命令                   & \texinline{\textbackslash} \\ \bottomrule
+		\texinline{#}  & 宏参数定义                     & \texinline{\#}             \\
+		\texinline{$}  & 开启数学环境                   & \texinline{\$}             \\
+		\texinline{^}  & 用于数学环境中表示上标         & \texinline{\^{}}           \\
+		\texinline{_}  & 用于数学环境中表示下标         & \texinline{\_}             \\
+		\texinline{&}  & 用于一些环境中表示对齐         & \texinline{\&}             \\
+		\texinline{{}} & 成对出现，表示范围，或者作用域 & \texinline{\{ \}}          \\
+		\texinline{~}  & 表示此处不能断开               & \texinline{\~{}}           \\
+		\texinline{\}  & 开始一个命令                   & \texinline{\textbackslash} \\ \bottomrule
 	\end{tabular}
+	\caption{特殊字符}
 \end{table}
 
 其他的符号可以在命令行输入\shinline{texdoc symbols}，里面有各种各样的符号的输入方法。
