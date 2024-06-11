@@ -51,8 +51,8 @@ lower separated=false,
 colframe=green!50!blue,
 righthand width=3cm,
 title={\pingfang 代码示例\thetcbcounter},
-% before=\begin{figure}[ht],
-% after=\end{figure},
+before=\begin{figure}[ht],
+after=\end{figure},
 #1}
 
 \newtcblisting[auto counter,number within=section]{shellcmd}[1][]{%
@@ -61,8 +61,8 @@ listing engine=minted,
 minted language=shell,
 colframe=green!50!blue,
 title={CMD \thetcbcounter},
-% before=\begin{figure}[ht],
-% after=\end{figure},
+before=\begin{figure}[ht],
+after=\end{figure},
 #1}
 
 
@@ -85,6 +85,7 @@ title={CMD \thetcbcounter},
 \part{基础篇}
 \include{chapter01}
 \include{chapter02}
-% \include{chapter_history}
+% \include{chapter03}
+\include{chapter_history}
 
 \end{document}
