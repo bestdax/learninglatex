@@ -66,7 +66,7 @@ category)，但是分类码也是可以修改的，这个以后再讲。document
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{lll} \toprule
-		符号           & 作用                           & 输出方式                   \\ \midrule
+		符号      & 作用                           & 输出方式                   \\ \midrule
 		\verb|#|  & 宏参数定义                     & \texinline{\#}             \\
 		\verb|$|  & 开启数学环境                   & \texinline{\$}             \\
 		\verb|^|  & 用于数学环境中表示上标         & \texinline{\^{}}           \\
@@ -86,3 +86,52 @@ category)，但是分类码也是可以修改的，这个以后再讲。document
 \end{shellcmd}
 
 里面有各种各样的符号的输入方法。
+
+上面的输出方式中，有两个在后面加上了\verb|{}|，这种写法是因为这些命令会将直接将紧随命令之后或者紧随命令空格后的一个字符当做参数，\verb|{}|表示一个内容为空的范围，不会有任何字符成为参数，也就可以输出符号本身。\verb|\^ a|和\verb|\^a|都会输出\^a。
+
+\section{空格与换行}
+\subsection{连续空格}
+在\LaTeX 中，空格与换行的处理与日常使用的Word之类的软件中的方式有很大的不同。首先，在\LaTeX
+中连续的空格被视为一个空格，这样可以做到规范文本格式。比如：
+\begin{texlst}
+	这是 关于空格    的示例。
+\end{texlst}
+\subsection{空格大小}
+\LaTeX
+中的空格的长度与字体的大小相关。在印刷术语中，把一个大写字母M的宽度称为1em，一个小写字母x的高度称为1ex，1em相当于字体的大小。比如\LaTeX
+正文的默认大小为10pt，也就是1em约等于10pt。在\LaTeX 中大空格等于1em，可以用\verb|\quad|来输出。在\LaTeX
+中空白分别可分行与不可分行两种，区别就在于它们所在的地方能不能被分割两行。
+
+下表是\LaTeX 中提供的空格的命令以及相应的大小。
+
+\begin{table}[htpb]
+	\centering
+	\begin{tabular}{lll} \toprule
+		空格命令                  & 长度       & 备注         \\ \midrule
+		\verb|\,|                 & $1/6$\,em  & 空\,格       \\
+		\verb|\>|                 & $2/9$\,em  & 空\>格       \\
+		\verb|\;|                 & $5/18$\,em & 空\;格       \\
+		\verb|\|\textvisiblespace & $1/3$\,em  & 空\ 格       \\
+		\verb|\enskip|            & $0.5$\,em  & 空\enskip 格 \\
+		\verb|\!|                 & $-1/6$\,em & 空\!格       \\
+		\verb|\quad|              & $1$\,em    & 空\quad 格   \\
+		\verb|\qquad|             & $2$\,em    & 空\qquad 格  \\
+		\verb|\hskip{长度值}|     & 任意长度   &              \\ \bottomrule
+	\end{tabular}
+	\caption{可分行空白}
+\end{table}
+
+\begin{table}[htpb]
+	\centering
+	\begin{tabular}{lll} \toprule
+		空格命令               & 长度       & 备注             \\ \midrule
+		\verb|\thinspace|      & $1/6$\,em  & 空\thinspace 格  \\
+		\verb|\medspace|       & $2/9$\,em  & 空\medspace 格   \\
+		\verb|\thickspace|     & $5/18$\,em & 空\thickspace 格 \\
+		\verb|~|               & $1/3$\,em  & 空~格            \\
+		\verb|\enspace|        & $0.5$\,em  & 空\enspace 格    \\
+		\verb|\negthinspace|   & $-1/6$\,em & 空\!格           \\
+		\verb|\hspace{长度值}| & 任意长度   &                  \\ \bottomrule
+	\end{tabular}
+	\caption{不可分行空白}
+\end{table}
