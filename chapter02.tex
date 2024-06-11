@@ -47,7 +47,7 @@ world”改成“你好，世界”，你将看不到相应的输出。这是因
 \AmS (美国数学学会)也提供了一套文档类型，分别为amsart和 amsbook，对数学公式的排版提供了更多的支持。当然还有很多很多的文档类型，可以根据自身的需要去使用。
 
 \section{\LaTeX 的三种语句} \label{三种语句}
-\LaTeX 的语句分三种，命令、文本和注释。如``hello word''示例中的
+\LaTeX 的语句分三种，命令、文本和注释。如\enquote{hello word}示例中的
 \texinline{\documentclass{article}}就是一条命令语句，以反斜杠\textbackslash 开始，
 document-class为命令名，只能用英文字母。这个规定涉及到\TeX 中的字符分类码(code
 category)，但是分类码也是可以修改的，这个以后再讲。documentclass后面的花括号内是命令的参数。命令一般还会有选项，比如：
@@ -67,14 +67,14 @@ category)，但是分类码也是可以修改的，这个以后再讲。document
 	\centering
 	\begin{tabular}{lll} \toprule
 		符号           & 作用                           & 输出方式                   \\ \midrule
-		\texinline{#}  & 宏参数定义                     & \texinline{\#}             \\
-		\texinline{$}  & 开启数学环境                   & \texinline{\$}             \\
-		\texinline{^}  & 用于数学环境中表示上标         & \texinline{\^{}}           \\
-		\texinline{_}  & 用于数学环境中表示下标         & \texinline{\_}             \\
-		\texinline{&}  & 用于一些环境中表示对齐         & \texinline{\&}             \\
-		\texinline{{}} & 成对出现，表示范围，或者作用域 & \texinline{\{ \}}          \\
-		\texinline{~}  & 表示此处不能断开               & \texinline{\~{}}           \\
-		\texinline{\}  & 开始一个命令                   & \texinline{\textbackslash} \\ \bottomrule
+		\verb|#|  & 宏参数定义                     & \texinline{\#}             \\
+		\verb|$|  & 开启数学环境                   & \texinline{\$}             \\
+		\verb|^|  & 用于数学环境中表示上标         & \texinline{\^{}}           \\
+		\verb|_|  & 用于数学环境中表示下标         & \texinline{\_}             \\
+		\verb|&|  & 用于一些环境中表示对齐         & \texinline{\&}             \\
+		\verb|{}| & 成对出现，表示范围，或者作用域 & \texinline{\{ \}}          \\
+		\verb|~|  & 表示此处不能断开               & \texinline{\~{}}           \\
+		\verb|\|  & 开始一个命令                   & \texinline{\textbackslash} \\ \bottomrule
 	\end{tabular}
 	\caption{特殊字符}
 \end{table}
