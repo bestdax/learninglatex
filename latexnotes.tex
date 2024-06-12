@@ -55,6 +55,10 @@ before=\begin{figure}[htpb],
 after=\end{figure},
 #1}
 
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
+
 \newtcblisting[auto counter,number within=section]{shellcmd}[1][]{%
 listing only,
 listing engine=minted,
