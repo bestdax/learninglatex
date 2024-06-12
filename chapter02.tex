@@ -109,32 +109,33 @@ category)，但是分类码也是可以修改的，这个以后再讲。document
 
 \begin{table}[htpb]
 	\centering
-	\begin{tabular}{lll} \toprule
-		空格命令                  & 长度       & 备注         \\ \midrule
-		\verb|\,|                 & $1/6$\,em  & 空\,格       \\
-		\verb|\>|                 & $2/9$\,em  & 空\>格       \\
-		\verb|\;|                 & $5/18$\,em & 空\;格       \\
-		\verb|\|\textvisiblespace & $1/3$\,em  & 空\ 格       \\
-		\verb|\enskip|            & $0.5$\,em  & 空\enskip 格 \\
-		\verb|\!|                 & $-1/6$\,em & 空\!格       \\
-		\verb|\quad|              & $1$\,em    & 空\quad 格   \\
-		\verb|\qquad|             & $2$\,em    & 空\qquad 格  \\
-		\verb|\hskip{长度值}|     & 任意长度   &              \\ \bottomrule
+	\begin{tabular}{lrl} \toprule
+		空格命令                  & 长度          & 备注                          \\ \midrule
+		\verb|\,|                 & $3\text{mu}$  & \Rightarrow\,\Leftarrow       \\
+		\verb|\>或\:|             & $4\text{mu}$  & \Rightarrow\>\Leftarrow       \\
+		\verb|\;|                 & $5\text{mu}$  & \Rightarrow\;\Leftarrow       \\
+		\verb|\|\textvisiblespace & $6\text{mu}$  & \Rightarrow\ \Leftarrow       \\
+		\verb|\enskip|            & $9\text{mu}$  & \Rightarrow\enskip \Leftarrow \\
+		\verb|\!|                 & $-3\text{mu}$ & \Rightarrow\!\Leftarrow       \\
+		\verb|\quad|              & $18\text{mu}$ & \Rightarrow\quad \Leftarrow   \\
+		\verb|\qquad|             & $36\text{mu}$ & \Rightarrow\qquad \Leftarrow  \\ \bottomrule
 	\end{tabular}
 	\caption{可分行空白}
 \end{table}
 
 \begin{table}[htpb]
 	\centering
-	\begin{tabular}{lll} \toprule
-		空格命令               & 长度       & 备注             \\ \midrule
-		\verb|\thinspace|      & $1/6$\,em  & 空\thinspace 格  \\
-		\verb|\medspace|       & $2/9$\,em  & 空\medspace 格   \\
-		\verb|\thickspace|     & $5/18$\,em & 空\thickspace 格 \\
-		\verb|~|               & $1/3$\,em  & 空~格            \\
-		\verb|\enspace|        & $0.5$\,em  & 空\enspace 格    \\
-		\verb|\negthinspace|   & $-1/6$\,em & 空\!格           \\
-		\verb|\hspace{长度值}| & 任意长度   &                  \\ \bottomrule
+	\begin{tabular}{lrl} \toprule
+		空格命令               & 长度          & 备注                                 \\ \midrule
+		\verb|\thinspace|      & $3\text{mu}$  & \Rightarrow\thinspace \Leftarrow     \\
+		\verb|\medspace|       & $4\text{mu}$  & \Rightarrow\medspace \Leftarrow      \\
+		\verb|\thickspace|     & $5\text{mu}$  & \Rightarrow\thickspace \Leftarrow    \\
+		\verb|~|               & $6\text{mu}$  & \Rightarrow~\Leftarrow               \\
+		\verb|\enspace|        & $9\text{mu}$  & \Rightarrow\enspace \Leftarrow       \\
+		\verb|\negthinspace|   & $-3\text{mu}$ & \Rightarrow\negthinspace \Leftarrow  \\
+		\verb|\negmedspace|    & $-4\text{mu}$ & \Rightarrow\negmedspace \Leftarrow   \\
+		\verb|\negthickspace|  & $-5\text{mu}$ & \Rightarrow\negthickspace \Leftarrow \\
+		\verb|\hspace{长度值}| & 任意长度      &                                      \\ \bottomrule
 	\end{tabular}
 	\caption{不可分行空白}
 \end{table}
