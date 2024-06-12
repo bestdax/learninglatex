@@ -62,7 +62,8 @@ category)，但是分类码也是可以修改的，这个以后再讲。document
 \end{texlst}
 
 \section{\LaTeX 中的特殊字符}
-在第\ref{三种语句}节中，讲到注释是以\%开始的，那么很自然的一个疑问，\%号本身该如何输出呢？这就引出了我们本节的内容特殊字符。特殊字符分为两类，一类是键盘上有字符，还有就是键盘上本来就没有的。
+在第\ref{三种语句}节中，讲到注释是以\%开始的，那么很自然的一个疑问，\%号本身该如何输出呢？这就引出了我们本节的内容特殊字符。特殊字符分为两类，一类是键盘上有字符，这种特殊字符由于用作控制字符，所以不能直接输入。第二种就是键盘上本来就没有的符号，比如\alpha\beta
+等等。
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{lll} \toprule
@@ -76,11 +77,11 @@ category)，但是分类码也是可以修改的，这个以后再讲。document
 		\verb|~|  & 表示此处不能断开               & \texinline{\~{}}           \\
 		\verb|\|  & 开始一个命令                   & \texinline{\textbackslash} \\ \bottomrule
 	\end{tabular}
-	\caption{特殊字符}
+	\caption{控制字符}
 \end{table}
 
 \pagebreak
-其他的符号可以在命令行输入:
+第二类特殊符号数量众多，可以在命令行输入以下命令:
 \begin{shellcmd}
 	texdoc symbols
 \end{shellcmd}
