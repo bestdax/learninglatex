@@ -142,6 +142,16 @@ category)，但是分类码也是可以修改的，这个以后再讲。document
 
 这里有一个没有明说的命名规则，大家可以看到以skip命名的命令可以分行，而space的命令则不可以。另外，虽然\texinline{\quad}和\texinline{\qquad}没有对应的不可分行的版本，但是可以用\texinline{\hspace{1em}}或者\texinline{\hspace{2em}}来实现。
 
+你可能会觉得\texinline[showspaces]{\ }这个命令是多此一举，因为用空格就直接可以输出一个空格，这个命令还有存在的必要吗？我们来看下面一个示例：
+\begin{texlst}[listing and text]
+	\LaTeX is a typesetting system.
+
+	\LaTeX\ is a typesetting system.	
+\end{texlst}
+
+可以看到第一个写法\LaTeX
+与is中间的空格消失了，因为空格或者其他非字母的字符是命令的界定符，在一个命令之后的空格就不会再输出空格。所以需要用\texinline[showspaces]{\ }来解决这个问题。
+
 \subsection{换行和分段}
 在\LaTeX 中，段落中间的空行(多个空行视为一个)会开始新的段落。
 
