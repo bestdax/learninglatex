@@ -97,10 +97,12 @@ category)，但是分类码也是可以修改的，这个以后再讲。document
 \begin{texlst}
 	这是 关于空格    的示例。
 \end{texlst}
+
 \subsection{空格大小}
 \LaTeX
 中的空格的长度与字体的大小相关。在印刷术语中，把一个大写字母M的宽度称为1em，一个小写字母x的高度称为1ex，1em相当于字体的大小。比如\LaTeX
-正文的默认大小为10pt，也就是1em约等于10pt。在\LaTeX 中大空格等于1em，可以用\verb|\quad|来输出。在\LaTeX
+正文的默认大小为10pt，也就是1em约等于10pt。另外，1en等于1em的一半(n是半个m)。在\LaTeX
+中宽空格等于1em，可以用\texinline{\quad}来输出。另外，在数学环境下，用mu(math unit)这个单位，$1\text{em}=18\text{mu}$。在\LaTeX
 中空白分别可分行与不可分行两种，区别就在于它们所在的地方能不能被分割两行。
 
 下表是\LaTeX 中提供的空格的命令以及相应的大小。
@@ -136,3 +138,37 @@ category)，但是分类码也是可以修改的，这个以后再讲。document
 	\end{tabular}
 	\caption{不可分行空白}
 \end{table}
+
+这里有一个没有明说的命名规则，大家可以看到以skip命名的命令可以分行，而space的命令则不可以。另外，虽然\texinline{\quad}和\texinline{\qquad}没有对应的不可分行的版本，但是可以用\texinline{\hspace{1em}}或者\texinline{\hspace{2em}}来实现。
+
+\subsection{换行和分段}
+在\LaTeX 中，段落中间的空行(多个空行视为一个)会开始新的段落。
+
+%\begin{noindent}
+\begin{texlst}
+这是
+一个句子，
+中间的回车被忽略。
+
+开始新的一段。
+
+
+多个空行被视为一个。
+\end{texlst}
+%\end{noindent}
+
+如果在行文中需要强制换行，可以使用\texinline{\\}。另外，\texinline{\\}命令还可以接受参数来控制纵向的距离。
+
+\begin{texlst}
+	这里\\换行
+
+	然后\\[2em]空两行
+\end{texlst}
+
+\texinline{\\*}命令也是强制换行，但是防止在此处分页。\texinline{\newline}的效果与\texinline{\\}一样，因为\texinline{\\}在输入方面的优势，一般都用\texinline{\\}。另外\texinline{\linebreak}也可以起到强制换行的效果，但是\texinline{\linebreak}会影响到分页，\texinline{\newline}则不会。
+
+此外，\LaTeX 中用\texinline{\par}来显式的起始一个段落。
+
+\begin{texlst}
+	段落1\par 段落2
+\end{texlst}
