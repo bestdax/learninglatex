@@ -46,6 +46,34 @@ world”改成“你好，世界”，你将看不到相应的输出。这是因
 
 \AmS (美国数学学会)也提供了一套文档类型，分别为amsart和 amsbook，对数学公式的排版提供了更多的支持。当然还有很多很多的文档类型，可以根据自身的需要去使用。
 
+\section{文档结构}
+在\nameref{sec:doctype}一节中，我们了解了文档有章节之类的结构，除此之外，文档还有标题，作者，日期以及目录这些信息。
+标题、作者及日期的申明放在导言区，命令分别是\texinline{\title}、\texinline{\author}、\texinline{\date}。申明了这些信息后不会直接显示，需要在正文区用\texinline{\maketitle}命令来显示这些信息。
+
+注意，如果有多位作者，名字之间用\texinline{\and}命令来连接。另外，日期可以用\texinline{\today}来生成当天的日期。
+
+目录的生成也很简单，用\texinline{\tableofcontents}命令就可以自动生成。如果某些章节你不希望出现在目录里，可以用相应的章节命令的星号版本。
+
+下面是一个简单的示例：
+\begin{texlst}[listing only]
+	%!tex program = lualatex
+	\documentclass{ctexart}
+	\title{我的巨著}
+	\author{大象同学 \and 我自己}
+	\date{\today}
+	\begin{document}
+	\maketitle
+	\tableofcontents
+
+	\section{我有一个伟大的想法}
+	balabala
+	\section*{这个不会出现在目录里面}
+	这个小节标题不会有编号，只有标题。
+
+	\end{document}
+\end{texlst}
+
+\clearpage
 \section{\LaTeX 的三种语句} \label{sec:text type}
 \LaTeX 的语句分三种，命令、文本和注释。如\enquote{hello word}示例中的
 \texinline{\documentclass{article}}就是一条命令语句，以反斜杠\textbackslash 开始，
