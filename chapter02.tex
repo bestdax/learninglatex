@@ -80,11 +80,16 @@ world”改成“你好，世界”，你将看不到相应的输出。这是因
 上面的布局图是用layouts宏包的\texinline{\drawpage}命令绘制的。与我们的直观理解类似，一个页面分为页眉、页脚、边注区及正文区，每个区域的尺寸及格式都是可以单独调整与设置的，这些内容我们后面再深究。
 
 \section{\LaTeX 的三种语句} \label{sec:text type}
-\LaTeX 的语句分三种，命令、文本和注释。如\enquote{hello word}示例中的
-\texinline{\documentclass{article}}就是一条命令语句，以反斜杠\textbackslash 开始，
-document-class为命令名，只能用英文字母(一些\TeX 原生的命令不遵守此规定)。这个规定涉及到\TeX 中的字符分类码(code
-category)，但是分类码也是可以修改的，这个以后再讲。documentclass后面的花括号内是命令的参数。命令一般还会有选项，比如：
-\\	\texinline{\documentclass[a4paper]{article}}，用来设置纸张大小为A4，至于其他的选项后面再介绍。
+\LaTeX 的语句分三种，命令、文本和注释。
+我们来看一个命令的示例：
+\begin{texlst}[listing and text]
+	\framebox[3cm]{这是一个盒子}
+\end{texlst}
+
+\LaTeX 命令由\texinline{\}开始，一般来讲命令只能由字母组成。因为\LaTeX 是由\TeX 的基础上发展而来，所以兼容\TeX
+的所有命令，一些\TeX
+原生的命令并不遵守这个规定，比如\texinline{\"}给字母上面加上两点。中括号内放置的是可选参数，因为是可选参数也就意味着命令内部有默认值。花括号内的是必选参数，就是说这对花括号必须要出现，但是内容可以为空。根据命令的不同，可选参数的个数会不同。
+
 
 \nameref{code:hello}中的\enquote{hello
 	world}就是文本。注释目前还没有遇到，注释的作用是向文档中添加说明或解释，这些内容在编译时不会被包含在最终的PDF或其他格式的输出文件中。注释对于理解代码、临时移除代码段或测试文档中的特定部分非常有用。注释用\%开始。
