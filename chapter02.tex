@@ -46,7 +46,7 @@ world”改成“你好，世界”，你将看不到相应的输出。这是因
 
 \AmS (美国数学学会)也提供了一套文档类型，分别为amsart和 amsbook，对数学公式的排版提供了更多的支持。当然还有很多很多的文档类型，可以根据自身的需要去使用。
 
-\section{\LaTeX 的三种语句} \label{三种语句}
+\section{\LaTeX 的三种语句} \label{sec:text type}
 \LaTeX 的语句分三种，命令、文本和注释。如\enquote{hello word}示例中的
 \texinline{\documentclass{article}}就是一条命令语句，以反斜杠\textbackslash 开始，
 document-class为命令名，只能用英文字母。这个规定涉及到\TeX 中的字符分类码(code
@@ -61,9 +61,21 @@ category)，但是分类码也是可以修改的，这个以后再讲。document
 	% 这是注释不可见
 \end{texlst}
 
+\section{\LaTeX 的命令格式}
+我们来看一个命令的示例：
+\begin{texlst}[listing and text]
+	\framebox[3cm]{这是一个盒子}
+\end{texlst}
+
+\LaTeX 命令由\texinline{\}开始，一般来讲命令只能由字母组成。因为\LaTeX 是由\TeX 的基础上发展而来，所以兼容\TeX
+的所有命令，一些\TeX
+原生的命令并不遵守这个规定，比如\texinline{\"}给字母上面加上两点。中括号内放置的是可选参数，因为是可选参数也就意味着命令内部有默认值。花括号内的是必选参数，就是说这对花括号必须要出现，但是内容可以为空。根据命令的不同，可选参数的个数会不同。
+
+
 \section{\LaTeX 中的特殊字符}
-在第\ref{三种语句}节中，讲到注释是以\%开始的，那么很自然的一个疑问，\%号本身该如何输出呢？这就引出了我们本节的内容特殊字符。特殊字符分为两类，一类是键盘上有字符，这种特殊字符由于用作控制字符，所以不能直接输入。第二种就是键盘上本来就没有的符号，比如\alpha\beta
+在\nameref{sec:text type}中，讲到注释是以\%开始的，那么很自然的一个疑问，\%号本身该如何输出呢？这就引出了我们本节的内容特殊字符。特殊字符分为两类，一类是键盘上有字符，这种特殊字符由于用作控制字符，所以不能直接输入。第二种就是键盘上本来就没有的符号，比如\alpha\beta
 等等。
+
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{lll} \toprule
