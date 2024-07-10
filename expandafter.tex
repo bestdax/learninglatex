@@ -44,4 +44,4 @@
 \cmdd}
 \end{texlst}
 
-在要延后展开4个控制序列的情况下，最外面一层用了15个\texinline{\expandafter}，简直太夸张了。不过，可以简单的理解，\texinline{\expandafter}是跳着进行的，所以15个\texinline{\expandafter}命令进行一轮后就剩下7个，第二轮后变成3个，第三轮1个。
+在要优先展开4个控制序列的情况下，最外面一层用了15个\texinline{\expandafter}，简直太夸张了。不过，可以简单的理解，\texinline{\expandafter}是跳着进行的，所以15个\texinline{\expandafter}命令进行一轮后就剩下7个，第二轮后变成3个，第三轮1个。如果理解了这些的话，你就会明白如果要优先展开5个控制序列的话，最外层需要用31个\texinline{\expandafter}。
