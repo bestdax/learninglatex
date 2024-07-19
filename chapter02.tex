@@ -181,7 +181,6 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 	\caption{不可分行空白}
 \end{table}
 
-
 你可能会觉得\texinline[showspaces]{\ }这个命令是多此一举，因为用空格就直接可以输出一个空格，这个命令还有存在的必要吗？我们来看下面一个示例：
 \begin{texlst}[listing and text]
 	\LaTeX is a typesetting system.
@@ -195,18 +194,15 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 \subsection{换行和分段}
 在\LaTeX 中，段落中间的空行(多个空行视为一个)会开始新的段落。
 
-%\begin{noindent}
 \begin{texlst}[listing and text]
-这是
-一个句子，
-中间的回车被忽略。
+	这是
+	一个句子，
+	中间的回车被忽略。
 
-开始新的一段。
+	开始新的一段。
 
-
-多个空行被视为一个。
+	多个空行被视为一个。
 \end{texlst}
-%\end{noindent}
 
 如果在行文中需要强制换行，可以使用\texinline{\\}。另外，\texinline{\\}命令还可以接受参数来控制纵向的距离。
 
