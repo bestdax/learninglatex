@@ -167,21 +167,20 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 \begin{table}[htpb]
 	\centering
 	\begin{tabular}{lrl} \toprule
-		空格命令               & 长度          & 备注                                 \\ \midrule
-		\verb|\thinspace|      & $3\text{mu}$  & \Rightarrow\thinspace \Leftarrow     \\
-		\verb|\medspace|       & $4\text{mu}$  & \Rightarrow\medspace \Leftarrow      \\
-		\verb|\thickspace|     & $5\text{mu}$  & \Rightarrow\thickspace \Leftarrow    \\
-		\verb|~|               & $6\text{mu}$  & \Rightarrow~\Leftarrow               \\
-		\verb|\enspace|        & $9\text{mu}$  & \Rightarrow\enspace \Leftarrow       \\
-		\verb|\negthinspace|   & $-3\text{mu}$ & \Rightarrow\negthinspace \Leftarrow  \\
-		\verb|\negmedspace|    & $-4\text{mu}$ & \Rightarrow\negmedspace \Leftarrow   \\
-		\verb|\negthickspace|  & $-5\text{mu}$ & \Rightarrow\negthickspace \Leftarrow \\
-		\verb|\hspace{长度值}| & 任意长度      &                                      \\ \bottomrule
+		空格命令              & 长度          & 备注                                 \\ \midrule
+		\verb|\thinspace|     & $3\text{mu}$  & \Rightarrow\thinspace \Leftarrow     \\
+		\verb|\medspace|      & $4\text{mu}$  & \Rightarrow\medspace \Leftarrow      \\
+		\verb|\thickspace|    & $5\text{mu}$  & \Rightarrow\thickspace \Leftarrow    \\
+		\verb|~|              & $6\text{mu}$  & \Rightarrow~\Leftarrow               \\
+		\verb|\enspace|       & $9\text{mu}$  & \Rightarrow\enspace \Leftarrow       \\
+		\verb|\negthinspace|  & $-3\text{mu}$ & \Rightarrow\negthinspace \Leftarrow  \\
+		\verb|\negmedspace|   & $-4\text{mu}$ & \Rightarrow\negmedspace \Leftarrow   \\
+		\verb|\negthickspace| & $-5\text{mu}$ & \Rightarrow\negthickspace \Leftarrow \\
+		\bottomrule
 	\end{tabular}
 	\caption{不可分行空白}
 \end{table}
 
-这里有一个没有明说的命名规则，大家可以看到以skip命名的命令可以分行，而space的命令则不可以。另外，虽然\texinline{\quad}和\texinline{\qquad}没有对应的不可分行的版本，但是可以用\texinline{\hspace{1em}}或者\texinline{\hspace{2em}}来实现。
 
 你可能会觉得\texinline[showspaces]{\ }这个命令是多此一举，因为用空格就直接可以输出一个空格，这个命令还有存在的必要吗？我们来看下面一个示例：
 \begin{texlst}[listing and text]
