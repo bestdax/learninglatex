@@ -18,8 +18,8 @@ World”。
 	\forcsvlist{\item}{
 	      第一个语句\texinline{\documentclass{article}}是指定文档类型，这里指定的是\texinline{artile}类型。,
 	      \texinline{\begin{document}}和\texinline{\end{document}}之间是正文区。,
-	      文档类型与正文之间称为导言区，这里可以加载其他宏包或者进行一些设定，这个示例里面这些都没有，我们会在后面看到。
-	      }
+文档类型与正文之间称为导言区，这里可以加载其他宏包或者进行一些设定，这个示例里面这些都没有，我们会在后面看到。
+}
 \end{enumerate}
 
 \section{文档类型}\label{sec:doctype}
@@ -131,10 +131,10 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 
 上面的输出方式中，有两个在后面加上了\texinline|{}|，这种写法是因为这些命令会将直接将紧随命令之后或者紧随命令空格后的一个字符当做参数，\texinline|{}|表示一个内容为空的范围，不会有任何字符成为参数，也就可以输出符号本身。\texinline|\^ a|和\texinline|\^a|都会输出\^a。
 
-\section{空格与换行}
-\subsection{连续空格}
-在\LaTeX 中，空格与换行的处理与日常使用的Word之类的软件中的方式有很大的不同。首先，在\LaTeX
-中连续的空格被视为一个空格，这样可以做到规范文本格式。比如：
+\section{空格}
+在 LaTeX 中，空格不仅仅是文本中的空白区域；它们是文档格式化的重要组成部分，用于控制单词间的间隔、段落内的行距，甚至是数学公式中的符号间隔。理解 LaTeX 如何处理空格，以及如何控制空格的大小和位置，是制作高质量文档的关键。
+\subsection{自动空格处理}
+\LaTeX 通常自动管理文本中的空格。例如，无论你在源文件中输入多少空格，\LaTeX 通常只会显示一个标准的单词间隔。同样，连续的空格会被合并成一个，多余的空格会被忽略。这意味着你不必担心源文件中的空格数量，\LaTeX 会自动调整以保持良好的阅读体验。
 \begin{texlst}
 	这是 关于空格    的示例。
 \end{texlst}
@@ -163,6 +163,7 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 	\end{tabular}
 	\caption{可分行空白}
 \end{table}
+\pagebreak
 
 \begin{table}[htpb]
 	\centering
@@ -192,9 +193,40 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 与is中间的空格消失了，因为空格或者其他非字母的字符是命令的界定符(除了几个特殊的\TeX
 命令)，在一个命令之后的空格就不会再输出空格。所以需要用\texinline[showspaces]{\}\textvisiblespace 来解决这个问题。
 
-\subsection{换行和分段}
-在\LaTeX 中，段落中间的空行(多个空行视为一个)会开始新的段落。
+\subsection{数学模式中的空格}
+在数学模式下，LaTeX
+会自动调整符号和表达式之间的空格，以反映数学运算的语义。例如，函数名和变量之间会自动添加适当的空间。然而，你仍然可以使用上述命令来微调数学公式的布局。
+\begin{texlst}[listing and text]
+$a^2+b^2=c^2$
+\end{texlst}
 
+\subsection{避免自动空格处理}
+有时你可能不希望 \LaTeX 自动合并或忽略空格，例如在代码示例或诗歌中。在这种情况下，可以使用 \texinline{verbatim} 环境，它会原样保留所有的空格和换行。
+
+\subsection{小结}
+\LaTeX 的空格处理机制提供了灵活性和控制力，使你能够在保持文档整洁的同时，对文本布局进行精确调整。通过理解 \LaTeX
+中空格的处理机制，你可以创造出既美观又专业，同时符合特定需求的文档。
+
+\section{换行和分段}
+在 \LaTeX
+编辑过程中，掌握如何控制文本的换行和分段是非常重要的技能，它直接影响到文档的可读性和美观度。不同于大多数文字处理器，\LaTeX 通常自动处理文本的布局，但有时你可能需要手动干预。
+\subsection{自动换行}
+\LaTeX 默认会自动进行换行和段落对齐。只要你在输入文本时按回车键结束一行并开始新的一行，\LaTeX
+会将这些视为逻辑上的新行，但在输出的文档中并\emph{不会形成可见的换行符}。LaTeX 会根据页面宽度和段落内容自动进行换行。
+
+\subsection{手动换行}
+如果你需要在特定位置强制换行，可以使用双反斜杠 \texinline{\\} 或者 \texinline{\newline} 命令。
+\texinline{\\*}命令也是强制换行，但是防止在此处分页。\texinline{\newline}的效果与\texinline{\\}一样，因为\texinline{\\}在输入方面的优势，一般都用\texinline{\\}。另外\texinline{\linebreak}也可以起到强制换行的效果，但是\texinline{\linebreak}会影响到分页，\texinline{\newline}则不会。
+另外，\texinline{\\}命令还可以接受参数来控制纵向的距离。
+\begin{texlst}[listing and text]
+	这里\\换行
+
+	然后\\[2em]空两行
+\end{texlst}
+
+但是请注意，过多的手动换行可能会破坏 LaTeX 的自然段落布局，导致不理想的间距问题。
+\subsection{分段}
+在 \LaTeX 中，创建一个新的段落非常简单，只需在段落之间插入一个空白行(多个空白行视为一个)即可。
 \begin{texlst}[listing and text]
 	这是
 	一个句子，
@@ -202,24 +234,19 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 
 	开始新的一段。
 
+
+
 	多个空行被视为一个。
 \end{texlst}
-
-如果在行文中需要强制换行，可以使用\texinline{\\}。另外，\texinline{\\}命令还可以接受参数来控制纵向的距离。
-
-\begin{texlst}[listing and text]
-	这里\\换行
-
-	然后\\[2em]空两行
-\end{texlst}
-
-\texinline{\\*}命令也是强制换行，但是防止在此处分页。\texinline{\newline}的效果与\texinline{\\}一样，因为\texinline{\\}在输入方面的优势，一般都用\texinline{\\}。另外\texinline{\linebreak}也可以起到强制换行的效果，但是\texinline{\linebreak}会影响到分页，\texinline{\newline}则不会。
 
 此外，\LaTeX 中用\texinline{\par}来显式的起始一个段落。
 
 \begin{texlst}
 	段落1\par 段落2
 \end{texlst}
+
+\subsection{小结}
+在 \LaTeX 中，换行和分段是文本布局的基本组成部分。了解如何使用 \LaTeX 的自动换行功能以及如何在必要时进行手动干预，将有助于你创建结构清晰、格式一致的高质量文档。
 
 \section{列表}
 列表
