@@ -220,3 +220,41 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 \begin{texlst}
 	段落1\par 段落2
 \end{texlst}
+
+\section{列表}
+列表
+是一种组织信息的有力工具，在学术论文、技术手册、报告、教程和几乎任何类型的文档中都非常常见。它们帮助读者快速浏览关键点，清晰地展示步骤或选项，以及区分不同概念或组成部分。在
+\LaTeX 中，创建列表不仅容易，而且高度可定制，允许你根据文档的具体需求来调整样式和格式。
+\subsection{无序列表（项目符号列表）}
+在 LaTeX 中创建无序列表（也称为项目符号列表）非常简单，使用 \texinline{itemize} 环境即可。每个列表项都以 \texinline{\item} 命令开始。
+\begin{texlst}[listing and text]
+	\begin{itemize}
+		\item 第一项
+		\item 第二项
+		\item 第三项
+	\end{itemize}
+\end{texlst}
+
+\subsection{有序列表（编号列表）}
+如果你需要一个有序列表，即带有数字或其他类型的编号的列表，那么应该使用 \texinline{enumerate} 环境。
+\begin{texlst}[listing and text]
+	\begin{enumerate}
+		\item 第一项
+		\item 第二项
+		\item 第三项
+	\end{enumerate}
+\end{texlst}
+
+\subsection{描述列表}
+描述列表（或定义列表）用于提供术语及其定义。在 \LaTeX 中，使用 \texinline{description} 环境。
+\begin{texlst}[listing and text]
+	\begin{description}
+		\item[术语一] 定义一
+		\item[术语二] 定义二
+		\item[术语三] 定义三
+	\end{description}
+\end{texlst}
+
+\subsection{小结}
+列表是 \LaTeX 文档中非常实用的功能，通过使用 \texinline{itemize}、\texinline{enumerate} 和 \texinline{description}
+环境，你可以轻松地创建各种风格的列表，以适应你的文档需求。自定义项目符号和编号格式则让你能够进一步调整列表的外观，使其与文档的整体风格相匹配。自定义的部分我们放在后面讲。
