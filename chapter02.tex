@@ -1,7 +1,7 @@
 \chapter{\LaTeX 入门}
 
 \section{Hello World}
-按惯例，我们首先在文本编辑器中写一个hello world，让\LaTeX 先用起来。如果是完全新手的话，建议首先使用发行版自带的编辑器，或者是overleaf的在线编辑器，因为对运行环境的集成度高，所以容易上手。
+按惯例，我们首先在文本编辑器中写一个\texinline{hello world}，让\LaTeX 先用起来。如果是完全新手的话，建议首先使用发行版自带的编辑器，或者是overleaf的在线编辑器，因为对运行环境的集成度高，所以容易上手。
 
 \begin{texlst}[listing only, label={code:hello}, nameref={Hello World示例代码}]
 \documentclass{article}
@@ -176,6 +176,7 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 
 \subsubsection{输入数学符号}
 除了希腊字母，LaTeX 还提供了大量的数学符号。例如：
+\footnote{示例代码中用的\texinline{itemize}列表环境后面马上会讲到。}
 \begin{texlst}[listing and text]
 \begin{itemize}[nosep]
 	\item $\times$
