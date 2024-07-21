@@ -105,7 +105,10 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 \section{\LaTeX 中的特殊字符}
 在\nameref{sec:text type}中，讲到注释是以\%开始的，那么很自然的一个疑问，\%号本身该如何输出呢？这就引出了我们本节的内容特殊字符。特殊字符分为两类，一类是键盘上有字符，这种特殊字符由于用作控制字符，所以不能直接输入。第二种就是键盘上本来就没有的符号，比如\alpha\beta
 等等。
-\begin{table}[ht]
+
+\subsection{控制字符}
+在 \LaTeX 的世界里，有几个字符因其特殊的功能而不能直接用于普通文本中。它们被用作命令、环境的界定符或格式控制的标志。下面列出了这些特殊字符以及如何在需要时正确地将它们作为普通文本的一部分插入到文档中。
+\begin{table}[H]
 	\centering
 	\begin{tabular}{lll} \toprule
 		符号      & 作用                           & 输出方式                   \\ \midrule
@@ -121,14 +124,90 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 	\caption{控制字符}
 \end{table}
 
-第二类特殊符号数量众多，可以在命令行输入以下命令:
+上面的输出方式中，有两个在后面加上了\texinline|{}|，这种写法是因为这些命令会将直接将紧随命令之后或者紧随命令空格后的一个字符当做参数，\texinline|{}|表示一个内容为空的范围，不会有任何字符成为参数，也就可以输出符号本身。\texinline|\^ a|和\texinline|\^a|都会输出\^a。
+\subsection{其他特殊字符}
+\LaTeX
+的强大之处在于它能够轻松地处理各种复杂的符号和字符，尤其适合于学术和科研领域的文档创作。当涉及到数学、物理、化学等学科时，希腊字母和专业符号的使用尤为频繁。幸运的是，\LaTeX 为这些特殊字符提供了简洁的命令。
+\subsubsection{输入希腊字母}
+希腊字母在 \LaTeX 中非常常见，无论是用于变量、函数命名还是在公式中表示特定的物理量或数学概念。要插入希腊字母，你只需要在反斜杠后面加上字母的名字即可。
+\begin{texlst}[listing and text]
+\begin{itemize}[nosep]
+\item \alpha
+\item \beta
+\item \gamma\quad\Gamma
+\item \delta\quad\Delta
+\item \epsilon
+\item \zeta
+\item \eta
+\item \theta\quad\Theta
+\item \iota
+\item \kappa
+\item \lambda\quad\Lambda
+\item \mu
+\item \nu
+\item \xi\quad\Xi
+\item \pi\quad\Pi
+\item \rho
+\item \sigma\quad\Sigma
+\item \tau
+\item \upsilon\quad\Upsilon
+\item \phi\quad\Phi
+\item \chi
+\item \psi\quad\Psi
+\item \omega\quad\Omega
+\end{itemize}
+\end{texlst}
+
+\pagebreak
+
+\subsubsection{输入数学符号}
+除了希腊字母，LaTeX 还提供了大量的数学符号。例如：
+\begin{texlst}[listing and text]
+\begin{itemize}[nosep]
+	\item $\times$
+	\item $\div$
+	\item $\pm$
+	\item $\neq$
+	\item $\leq$
+	\item $\geq$
+	\item $\approx$
+	\item $\infty$
+	\item $\int$
+	\item $\sum$
+	\item $\prod$
+	\item $\sqrt{x}$
+	\item $\frac{a}{b}$
+\end{itemize}
+\end{texlst}
+注意数学符号需要在数学模式下才能输入，否则会出错，数学符号优雅的输出是\LaTeX
+很重要的一个特性，具体的内容到数学公式的部分再细讲。
+\vfill
+\pagebreak
+\subsubsection{其他特殊符号}
+对于其他特殊字符，\LaTeX 同样提供了一系列命令。例如：
+
+\begin{texlst}[listing and text]
+\begin{itemize}[nosep]
+	\item \dag
+	\item \ddag
+	\item \S
+	\item \P
+	\item \copyright
+	\item \pounds
+	\item \ae
+	\item \oe
+	\item \AA
+	\item \aa
+\end{itemize}
+\end{texlst}
+
+\LaTeX 中还提供了一个手册，可以快速查询各种各样的符号的输出方法，在命令行中输入以下命令来查阅。
 \begin{shellcmd}
 	texdoc symbols
 \end{shellcmd}
 
-里面有各种各样的符号的输入方法。
-
-上面的输出方式中，有两个在后面加上了\texinline|{}|，这种写法是因为这些命令会将直接将紧随命令之后或者紧随命令空格后的一个字符当做参数，\texinline|{}|表示一个内容为空的范围，不会有任何字符成为参数，也就可以输出符号本身。\texinline|\^ a|和\texinline|\^a|都会输出\^a。
+\subsection{小结}
+\LaTeX 为输入特殊字符提供了极其丰富的支持，无论是希腊字母、数学符号还是其他领域常用的字符。通过简单的命令，你可以轻松地将这些符号融入你的文档中，使你的文本既专业又美观。掌握这些命令将极大地提升你使用 \LaTeX 创作学术和科研文档的能力。
 
 \section{空格}
 在 LaTeX 中，空格不仅仅是文本中的空白区域；它们是文档格式化的重要组成部分，用于控制单词间的间隔、段落内的行距，甚至是数学公式中的符号间隔。理解 LaTeX 如何处理空格，以及如何控制空格的大小和位置，是制作高质量文档的关键。
