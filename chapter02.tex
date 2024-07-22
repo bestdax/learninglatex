@@ -340,6 +340,30 @@ $a^2+b^2=c^2$
 \subsection{小结}
 在 \LaTeX 中，换行和分段是文本布局的基本组成部分。了解如何使用 \LaTeX 的自动换行功能以及如何在必要时进行手动干预，将有助于你创建结构清晰、格式一致的高质量文档。
 
+\section{环境}
+在 \LaTeX 中，环境（environment）是一种用于组织和格式化文档内容的重要机制。环境允许你定义一个具有特定布局和样式的一段文本区域，从而使得文档结构更加清晰且易于维护。环境通常用于处理比单个命令更复杂的情况，如列表、数学公式、引用、表格、图形、章节标题等。
+
+\subsection{环境的优点}
+\begin{enumerate}[nosep]
+	\item \textbf{结构化}：环境帮助你将文档分成逻辑上独立的部分，使得文档结构更加清晰。
+	\item \textbf{格式控制}：每个环境都有预定义的格式规则，这有助于保持整个文档的一致性。
+	\item \textbf{重用性}：一旦定义了某个环境，你可以在文档中多次使用它，无需重复相同的格式指令。
+	\item \textbf{扩展性}：\LaTeX 提供了广泛的宏包，每个宏包都可能引入新的环境，以满足不同的排版需求。
+	\item \textbf{易于修改}：如果需要更改某一类内容的格式，只需修改相关环境的定义即可，而不必逐个修改文档中的每个实例。
+\end{enumerate}
+
+\subsection{常用的环境}
+\begin{description}
+	\item[列表环境] 有序列表\texinline{enumerate}、无序列表\texinline{itemize}和描述列表\texinline{description}
+	\item[浮动体环境]
+	      \texinline{figure}、\texinline{table}用于将图表生成浮动体(因为图表一般面积挺大，如果当前位置放不下可以根据规则进行浮动而不至于出现大面积的空白)，可自动编号和添加标题。
+	\item[数学环境] 一般常用的有\texinline{equation}、\texinline{gather}、\texinline{align}、\texinline{matrix}等
+	\item[表格环境] \texinline{tabular}可以生成最基本的表格
+	\item[引用文本环境] \texinline{quotation}和\texinline{quote}环境可以用来处理引用文本
+	\item[抄录环境] \texinline{verbatim}抄录环境用来实现将文本不加任何翻译的输出，一般用于显示源代码
+	\item[文本框环境] \texinline{minipage}环境用于创建文本框，常用于并排排列内容
+\end{description}
+
 \section{列表}
 列表
 是一种组织信息的有力工具，在学术论文、技术手册、报告、教程和几乎任何类型的文档中都非常常见。它们帮助读者快速浏览关键点，清晰地展示步骤或选项，以及区分不同概念或组成部分。在
