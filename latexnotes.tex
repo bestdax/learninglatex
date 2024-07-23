@@ -7,27 +7,14 @@
 \WarningFilter{latexfont}{Size substitution}
 \WarningFilter{latexfont}{Some font}
 \WarningFilter{layouts}{Layout scale}
-
-\hfuzz=10pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[colorlinks=true]{hyperref}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ctexset{
-  section/format += {\flushleft\color{green!50!blue}\pingfang},
-  section/number = {\arabic{section}},
-  section/name = {第,节},
-  section/numberformat += {\Huge\color{green!60!blue}\fontsize{48}{64}\selectfont}
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% layout related settings
 \usepackage{fancyhdr}
 \usepackage{emptypage}
 \pagestyle{fancy}
 % \renewcommand\headrulewidth{0.4pt}
 \setlength{\headheight}{13.06885pt}
+\hfuzz=10pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % minted settings 
 \usepackage[outputdir=build]{minted}
@@ -35,7 +22,8 @@
 \newmintinline[shinline]{shell}{breaklines}
 \newcommand\showdim[1]{\texinline{#1}=\the#1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+% packages
+\usepackage[colorlinks=true]{hyperref}
 \usepackage{hologo}
 \usepackage{geometry}
 \usepackage{layouts}
@@ -53,6 +41,17 @@
 \usepackage{enumitem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\colorlet{titlecolor}{green!60!blue}
+\colorlet{framecolor}{green!70!blue!30}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ctexset{
+  section/format += {\flushleft\color{titlecolor}\pingfang},
+  section/number = {\arabic{section}},
+  section/name = {第,节},
+  section/numberformat += {\color{titlecolor}\fontsize{48}{64}\selectfont}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % tcolorbox settings
 \newtcblisting[auto counter,number within=section]{texlst}[1][]{%
 listing engine=minted,
@@ -60,7 +59,7 @@ minted language=latex,
 sidebyside,
 minted options app={linenos, numbersep=5pt},
 lower separated=false,
-colframe=green!50!blue,
+colframe=framecolor,
 righthand width=3cm,
 title={\textsf{代码示例\thetcbcounter}},
 before=\begin{figure}[H],
@@ -75,7 +74,7 @@ after=\end{figure},
 listing only,
 listing engine=minted,
 minted language=shell,
-colframe=green!50!blue,
+colframe=framecolor,
 title={CMD \thetcbcounter},
 before=\begin{figure}[htpb],
 after=\end{figure},
