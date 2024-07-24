@@ -404,3 +404,35 @@ $a^2+b^2=c^2$
 \subsection{小结}
 列表是 \LaTeX 文档中非常实用的功能，通过使用 \texinline{itemize}、\texinline{enumerate} 和 \texinline{description}
 环境，你可以轻松地创建各种风格的列表，以适应你的文档需求。自定义项目符号和编号格式则让你能够进一步调整列表的外观，使其与文档的整体风格相匹配。自定义的部分我们放在后面讲。
+
+\section{表格}
+在\LaTeX\
+中创建表格是一个非常实用的功能，尤其是当你需要在文档中插入数据、对比信息或展示统计数据时。\texinline{tabular}环境是\LaTeX\ 中最基本的表格生成工具，它允许你以高度定制的方式创建表格。
+
+\subsection{基本语法}
+
+\begin{texlst}[listing only]
+\begin{tabular}{列类型}
+    表格内容
+\end{tabular}
+\end{texlst}
+
+其中，\enquote{列类型}定义了表格的列数和每一列的对齐方式（左对齐\texinline{l}、居中\texinline{c}、右对齐\texinline{r}）。以及是否加竖线\texinline{|}，比如\texinline#{|l|c|r|}#就定义了三列，并且每列中间都用竖线分隔。
+
+\subsection{创建一个简单的表格}
+\begin{texlst}[listing and text]
+\begin{tabular}{|c|r|}
+    \hline
+    名称 & 数量 \\ \hline
+    苹果 & 5 \\
+    香蕉 & 3 \\
+    橙子 & 2 \\
+    \hline
+\end{tabular}
+\end{texlst}
+可以看到，列之间用\texinline{&}隔开，行需要手动用\texinline{\hline}命令来绘制横线。
+
+\subsection{小结}
+\texinline{tabular}环境是\LaTeX\
+中创建表格的基础。但是\texinline{tabular}的功能有限，一些高级的功能无法实际，比如单元格跨行和跨列的问题，长表格转置等等。随着你对\LaTeX
+的熟悉，我们可以一起探索更多如\texinline{multirow}、\texinline{longtable}等其他更复杂的表格环境，它们提供了更加强大的表格功能。
