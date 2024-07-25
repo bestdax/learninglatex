@@ -449,3 +449,31 @@ $a^2+b^2=c^2$
 \texinline{tabular}环境是\LaTeX\
 中创建表格的基础。但是\texinline{tabular}的功能有限，一些高级的功能无法实际，比如单元格跨行和跨列的问题，长表格转置等等。随着你对\LaTeX
 的熟悉，我们可以一起探索更多如\texinline{multirow}、\texinline{longtable}等其他更复杂的表格环境，它们提供了更加强大的表格功能。
+
+\section{插入图片}
+在学术论文、报告或任何类型的文档中插入图片是一种常见的做法。\LaTeX\ 
+提供了多种方式来插入和处理图片，使其能够很好地融入文档的整体设计中。在\LaTeX\ 中插入图片，需要在导言区加载\texinline{graphicx}\footnote{\LaTeX\ 中还有一个graphics宏包，graphicx属于增强版本，所以现在一般都用这个}包。这是我们第一次用到第三方的宏包的情况，我们来看一下插入图片的基本语法。
+\begin{texlst}[listing only]
+	%!tex program = lualatex
+	\documentclass{article}
+	\usepackage{graphicx} % 加载图形处理包
+	
+	\begin{document}
+	\begin{figure}[htbp] % 将图片放置在figue环境中，这是一个浮动体环境，可以控制图片在不同的情况下的位置策略
+    \centering % 居中图片
+    \includegraphics[width=0.5\textwidth]{example-image-a} % 载入图片，可选参数中可以设置图片的大小
+    \caption{这是一个示例图片。} % 图片的标题
+    \label{fig:example} % 图片的标签，可以在其他地方引用图片
+\end{figure}
+	\end{document}
+\end{texlst}
+
+下面我们看一下上面的代码插入图片的效果。
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{example-image-a}
+	\caption{这是一个示例图片。}
+	\label{fig:example}
+\end{figure}
+
+当然\texinline{graphicx}宏包还有其他的功能，比如旋转，裁切等等，我们后面会详细介绍。
