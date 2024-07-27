@@ -522,29 +522,75 @@ a_2 = b_2 + c_2 - d_2 + e_2
 	\item \texinline{flalign} 和 \texinline{flalign*}\footnote{fl是full length的意思}，多行公式，对齐到整个页面的宽度
 	      \begin{texlst}[listing and text, righthand width=5cm, lower separated=true]
 \begin{flalign*}
-  a_{11} + b_{11} & = c_{11} & a_{12} & = b_{12}\\ 
+  a_{11} + b_{11} & = c_{11} & a_{12} & = b_{12}\\
   b_{21} & = c_{21} & a_{22} & = b_{22} + c_{22}
 \end{flalign*}
 	  \end{texlst}
 \end{itemize}
 
 \subsection{常用的数学命令}
+\begin{itemize}
+	\item 分式 \inlinedemo{\frac{b}{a}}
+	\item 根号 \inlinedemo{\sqrt[4]{a^3}}
+	\item 求和 \inlinedemo{\sum_{n=1}^{100}n^2}
+	\item 极限 \inlinedemo{\lim_{x\to\infty}\frac{1}{x}}
+	\item 连乘 \inlinedemo{\prod_{k=1}^{m} \left( 1 + \frac{1}{k^2} \right)}
+	\item 积分 \inlinedemo{\int_{0}^{\infty} e^{-x^2}\,dx}
+	\item 对数 \inlinedemo{\log_{10}{a}}
+	\item 连分数 \inlinedemo{\cfrac{1}{\sqrt{2}+\cfrac{1}{\sqrt{2}+\dots}}}
+\end{itemize}
+
+另外，还有一些与矩阵相关的命令也挺常见。
+\begin{texlst}[listing and text]
+\begin{math}
+\begin{matrix}
+	a & b \\
+	c & d
+\end{matrix}
+\end{math}
+\end{texlst}
 
 \begin{texlst}[listing and text]
-	\begin{align*}
-		&\frac{a}{b}\\ % 分式
-		&\sqrt[4]{a^3} \\ % 根号
-		&\sum_{n=1}^{100}n^2 \\ % 求和
-		&\prod_{k=1}^{m} \left( 1 + \frac{1}{k^2} \right) \\ % 乘积
-		&\int_{0}^{\infty} e^{-x^2} \, dx \\ % 积分
-		&\cfrac{1}{\sqrt{2} + 
-		\cfrac{1}{\sqrt{2}+
-		\cfrac{1}{\sqrt{2} + \dots}}
-		} \\ % 连分数
-		&
-		\begin{matrix}
-			a & b \\ 
-			c & d
-		\end{matrix} % 矩阵
-	\end{align*}
+\begin{math}
+\begin{pmatrix}
+	a & b \\
+	c & d
+\end{pmatrix}
+\end{math}
+\end{texlst}
+
+\begin{texlst}[listing and text]
+\begin{math}
+\begin{bmatrix}
+	a & b \\
+	c & d
+\end{bmatrix}
+\end{math}
+\end{texlst}
+
+\begin{texlst}[listing and text]
+\begin{math}
+\begin{Bmatrix}
+	a & b \\
+	c & d
+\end{Bmatrix}
+\end{math}
+\end{texlst}
+
+\begin{texlst}[listing and text]
+\begin{math}
+\begin{vmatrix}
+	a & b \\
+	c & d
+\end{vmatrix}
+\end{math}
+\end{texlst}
+
+\begin{texlst}[listing and text]
+\begin{math}
+\begin{Vmatrix}
+	a & b \\
+	c & d
+\end{Vmatrix}
+\end{math}
 \end{texlst}
