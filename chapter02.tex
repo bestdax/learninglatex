@@ -489,7 +489,7 @@ $a^2+b^2=c^2$
 
 在书写数学公式的时候一般都建议加载\texinline{amsmath}和\texinline{amssymb}宏包。\texinline{amsmath}提供了多个相关的环境来处理不同情况下书写公式的需要。
 \subsection{常用的数学环境}
-\begin{itemize}[label=\twemoji{elephant}, nosep]
+\begin{itemize}[nosep]
 	\item \texinline{equation} 和 \texinline{equation*}，用单行公式，星号的版本不编号
 	      \begin{texlst}[listing and text, righthand width=5cm, lower separated=true]
 \begin{equation}
@@ -529,17 +529,29 @@ a_2 = b_2 + c_2 - d_2 + e_2
 \end{itemize}
 
 \subsection{常用的数学命令}
-\begin{itemize}
-	\item 分式 \inlinedemo{\frac{b}{a}}
-	\item 根号 \inlinedemo{\sqrt[4]{a^3}}
+\begin{itemize}[nosep]
+	\item 分式 \inlinedemo{\frac{b}{x}}
+	\item 根号 \inlinedemo{\sqrt[4]{x^3}}
 	\item 求和 \inlinedemo{\sum_{n=1}^{100}n^2}
 	\item 极限 \inlinedemo{\lim_{x\to\infty}\frac{1}{x}}
 	\item 连乘 \inlinedemo{\prod_{k=1}^{m} \left( 1 + \frac{1}{k^2} \right)}
 	\item 积分 \inlinedemo{\int_{0}^{\infty} e^{-x^2}\,dx}
-	\item 对数 \inlinedemo{\log_{10}{a}}
+	\item 对数 \inlinedemo{\log_{10}{x}}
+	\item 自然对数 \inlinedemo{\ln{x}}
 	\item 连分数 \inlinedemo{\cfrac{1}{\sqrt{2}+\cfrac{1}{\sqrt{2}+\dots}}}
+	\item 二项式 \inlinedemo{\binom{n}{2}}
+	\item 正负号 \inlinedemo{\pm}
+	\item 负正号 \inlinedemo{\mp}
+	\item 乘号 \inlinedemo{\times}
+	\item 除号 \inlinedemo{\div}
+	\item 大于等于号 \inlinedemo{\ge}
+	\item 小于等于号 \inlinedemo{\le}
+	\item 不等于号 \inlinedemo{\ne}
+	\item 约等于号 \inlinedemo{\approx}
+	\item 相似 \inlinedemo{\sim}
+	\item 全等 \inlinedemo{\cong}
 \end{itemize}
-
+\vspace{1cm}
 另外，还有一些与矩阵相关的命令也挺常见。
 \begin{texlst}[listing and text]
 \begin{math}
@@ -549,6 +561,8 @@ a_2 = b_2 + c_2 - d_2 + e_2
 \end{matrix}
 \end{math}
 \end{texlst}
+\vfill
+\pagebreak
 
 \begin{texlst}[listing and text]
 \begin{math}
