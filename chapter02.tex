@@ -451,7 +451,7 @@ $a^2+b^2=c^2$
 的熟悉，我们可以一起探索更多如\texinline{multirow}、\texinline{longtable}等其他更复杂的表格环境，它们提供了更加强大的表格功能。
 
 \section{插入图片}
-在学术论文、报告或任何类型的文档中插入图片是一种常见的做法。\LaTeX\ 
+在学术论文、报告或任何类型的文档中插入图片是一种常见的做法。\LaTeX\
 提供了多种方式来插入和处理图片，使其能够很好地融入文档的整体设计中。在\LaTeX\ 中插入图片，需要在导言区加载\texinline{graphicx}\footnote{\LaTeX\ 中还有一个graphics宏包，graphicx属于增强版本，所以现在一般都用这个}包。这是我们第一次用到第三方的宏包的情况，我们来看一下插入图片的基本语法。
 \begin{texlst}[listing only]
 	%!tex program = lualatex
@@ -477,3 +477,74 @@ $a^2+b^2=c^2$
 \end{figure}
 
 当然\texinline{graphicx}宏包还有其他的功能，比如旋转，裁切等等，我们后面会详细介绍。
+
+\section{数学公式}
+大家使用\LaTeX\  最主要的原因可能就是用来写公式，可见\LaTeX\  在公式排版处理方面的强大能力。在\LaTeX\
+中公式分为行内公式(inline)和行间公式(display)。
+
+行内公式可以用\texinline{$$}来包围，比如\texinline{$(a+b)^2=a^2+2ab+b^2$}，效果 \( (a+b)^2 = a^2 + 2ab + b^2
+\)。但是一般并不建议用这种方式，因为\texinline{$}无法分清是否成对，一般推荐用\texinline{\( \)}。
+
+行间公式可以用\texinline{$$ $$}来包围，跟前面的原因一样这种方式不推荐，另外还可以用\texinline{\[ \]}，这种方式我觉得也不好，语义化的命令才便于阅读。
+
+在书写数学公式的时候一般都建议加载\texinline{amsmath}和\texinline{amssymb}宏包。\texinline{amsmath}提供了多个相关的环境来处理不同情况下书写公式的需要。
+\subsection{常用的数学环境}
+\begin{itemize}[label=\twemoji{elephant}, nosep]
+	\item \texinline{equation} 和 \texinline{equation*}，用单行公式，星号的版本不编号
+	      \begin{texlst}[listing and text, righthand width=5cm, lower separated=true]
+\begin{equation}
+	  \sum_{l=0}^{n}(n-l)^{l}
+\end{equation}
+		\end{texlst}
+
+	\item \texinline{multline} 和 \texinline{multline*}，多行公式
+	      \begin{texlst}[listing and text, righthand width=5cm, lower separated=true]
+\begin{multline*}
+	  a+b+c+\\
+	  f + i + j + k
+\end{multline*}
+		\end{texlst}
+
+	\item \texinline{gather} 和 \texinline{gather*}，多行公式，居中对齐
+	      \begin{texlst}[listing and text, righthand width=5cm, lower separated=true]
+\begin{gather*}
+a_1 = b_1 + c_1 \\
+a_2 = b_2 + c_2 - d_2 + e_2
+\end{gather*}
+		\end{texlst}
+	\item \texinline{align} 和 \texinline{align*}，多行公式，按\texinline{&}来对齐
+	      \begin{texlst}[listing and text, righthand width=5cm, lower separated=true]
+\begin{align*}
+  a_1 &= b_1 + c_1 \\
+  a_2 &= b_2 + c_2 - d_2 + e_2
+\end{align*}
+	  \end{texlst}
+	\item \texinline{flalign} 和 \texinline{flalign*}\footnote{fl是full length的意思}，多行公式，对齐到整个页面的宽度
+	      \begin{texlst}[listing and text, righthand width=5cm, lower separated=true]
+\begin{flalign*}
+  a_{11} + b_{11} & = c_{11} & a_{12} & = b_{12}\\ 
+  b_{21} & = c_{21} & a_{22} & = b_{22} + c_{22}
+\end{flalign*}
+	  \end{texlst}
+\end{itemize}
+
+\subsection{常用的数学命令}
+
+\begin{texlst}[listing and text]
+	\begin{align*}
+		&\frac{a}{b}\\ % 分式
+		&\sqrt[4]{a^3} \\ % 根号
+		&\sum_{n=1}^{100}n^2 \\ % 求和
+		&\prod_{k=1}^{m} \left( 1 + \frac{1}{k^2} \right) \\ % 乘积
+		&\int_{0}^{\infty} e^{-x^2} \, dx \\ % 积分
+		&\cfrac{1}{\sqrt{2} + 
+		\cfrac{1}{\sqrt{2}+
+		\cfrac{1}{\sqrt{2} + \dots}}
+		} \\ % 连分数
+		&
+		\begin{matrix}
+			a & b \\ 
+			c & d
+		\end{matrix} % 矩阵
+	\end{align*}
+\end{texlst}
